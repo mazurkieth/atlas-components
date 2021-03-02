@@ -6,23 +6,77 @@
     <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css" media="all"/>
 
-    <link rel="stylesheet" href="https://www.ebi.ac.uk/gxa/resources/css/foundation/atlas.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/gxa/sc/resources/css/theme-atlas.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/gxa/sc/resources/css/atlas.css" type="text/css" media="all">
+
+    <!-- If you have a custom header image or colour -->
+    <meta name="ebi:masthead-color" content="rgb(0,124,130)" />
+    <meta name="ebi:masthead-image" content="cells_background.png" />
 </head>
 
 <body>
-<div id="wrapper" class="row">
-    <div id="content" class="small-12 columns">
-        <div id="target"></div>
-        <div id="target2"></div>
-    </div>
+<header id="masthead-black-bar" class="clearfix masthead-black-bar">
+</header>
+
+<div id="information-banner" style="background: #C5C5C5; font-size: large"></div>
+<div data-sticky-container>
+    <header id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="content:top" data-btm-anchor="content:bottom">
+        <div class="masthead-inner row expanded">
+            <div class="small-12 large-8 columns">
+                <!-- local-title -->
+                <a href="#" title="Back to Single Cell Expression Atlas homepage">
+                    <div class="media-object" id="local-title">
+                        <div class="media-object-section hide-for-small-only">
+                            <img src="sc_atlas_logo.png" alt="Single Cell Expression Atlas logo" style="height:7em">
+                        </div>
+                        <div class="media-object-section">
+                            <h1>Single&nbsp;Cell Expression&nbsp;Atlas</h1>
+                            <h4 class="show-for-large">Single cell gene expression across species</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="small-12 large-4 columns">
+                <div class="media-object" style="display: flex; justify-content: flex-end; align-items: center;">
+                    <div class="media-object-section">
+                        <h4 class="show-for-large">Query bulk expression</h4>
+                        <a href="#" title="To Expression Atlas" class="button" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5)"><i class="icon icon-functional" data-icon="<"></i> Back to Expression Atlas</a>
+                    </div>
+                    <div class="media-object-section show-for-large">
+                        <a href="https://wellcome.ac.uk/">
+                            <img src="wellcome_trust_logo_black.png" alt="Wellcome Trust logo" style="max-height: 5.5em; background: white">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <ul id="local-nav" class="dropdown menu float-left" data-description="navigational">
+                    <li id="local-nav-home"><a href="#"><i class="icon icon-generic padding-right-medium" data-icon="H"></i>Home</a></li>
+                    <li id="local-nav-search"><a href="#"><i class="icon icon-functional padding-right-medium" data-icon="1"></i>Gene search</a></li>
+                    <li id="local-nav-experiments"><a href="#"><i class="icon icon-functional padding-right-medium" data-icon="C"></i>Browse experiments</a></li>
+                    <li id="local-nav-release-notes"><a href="#"><i class="icon icon-generic padding-right-medium" data-icon=";"></i>Release notes</a></li>
+                    <li id="local-nav-help"><a href="#"><i class="icon icon-generic padding-right-medium" data-icon="?"></i>Help</a></li>
+                    <li id="local-nav-feedback"><a href="#" target="_blank" data-icon="X"><i class="icon icon-generic padding-right-medium" data-icon="s"></i>Support</a></li>
+                </ul>
+            </nav>
+            <!-- /local-nav -->
+        </div>
+    </header>
 </div>
-</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script defer="defer" src="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/script.js"></script>
 
 <script src="../dist/vendors.bundle.js"></script>
 <script src="../dist/atlasInformationBannerDemo.bundle.js"></script>
 
 <script>
-   atlasInformationBannerDemo.render({}, 'target')
+    // Hack that solves https://github.com/ebiwd/EBI-Framework/pull/139 (I got tired of waiting)
+    window.addEventListener('load', function(event) {
+        $('#masthead-black-bar nav')[2].className='row expanded';
+    });
+   atlasInformationBannerDemo.render({}, 'information-banner')
 </script>
 
 </html>
