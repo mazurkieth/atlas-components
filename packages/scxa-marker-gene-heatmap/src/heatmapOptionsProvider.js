@@ -14,7 +14,7 @@ const heatmapOptionsProvider = {
       }
     },
     title: cellType => `${cellType} marker genes`,
-    labelsFormatter: label => label,
+    labelsFormatter: (label, url) => `<a href="${url}" style="border: none; color: #148ff3">${label}</a>`,
     noData: `No marker genes found for the selected organ or region. Try selecting another organism part.`
   },
 
