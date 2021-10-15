@@ -3,17 +3,14 @@ const heatmapOptionsProvider = {
     tooltip: {
       // followPointer: true,
       formatter: function () {
-        if(this.point.value === null) {
+        if (this.point.value === null) {
           return `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
               `<b>Expression:</b> Not expressed<br/>`
         }
-        else {
-          const text =
-              `<b>Cell marker gene from experiment:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
-              `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
-              `<b>Expression:</b> ${+this.point.value.toFixed(3)} CPM`
-          return text
-        }
+
+        return `<b>Cell marker gene from experiment:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
+            `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
+            `<b>Expression:</b> ${+this.point.value.toFixed(3)} CPM`
       }
     },
     title: cellType => `${cellType} marker genes`,
@@ -25,18 +22,16 @@ const heatmapOptionsProvider = {
     tooltip: {
       // followPointer: true,
       formatter: function () {
-        if(this.point.value === null) {
+        if (this.point.value === null) {
           return `<b>Cell type:</b> ${this.point.cellGroupValue}<br/>` +
             `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
             `<b>Expression:</b> Not expressed<br/>`
         }
-        else {
-          const text = `<b>Cell type:</b> ${this.point.cellGroupValue}<br/>` +
-            `<b>Cell type where marker:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
-            `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
-            `<b>Expression:</b> ${+this.point.value.toFixed(3)} CPM`
-          return text
-        }
+
+        return `<b>Cell type:</b> ${this.point.cellGroupValue}<br/>` +
+          `<b>Cell type where marker:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
+          `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
+          `<b>Expression:</b> ${+this.point.value.toFixed(3)} CPM`
       }
     },
     title: cellType => `${cellType} marker genes`,
@@ -48,24 +43,22 @@ const heatmapOptionsProvider = {
     tooltip: {
       // followPointer: true,
       formatter: function () {
-        if(this.point.value === null) {
-          return `<b>Cluster ID:</b> ${this.point.x+1}<br/>` +
+        if (this.point.value === null) {
+          return `<b>Cluster ID:</b> ${this.point.x + 1}<br/>` +
             `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
             `<b>Median expression:</b> Not expressed<br/>`
         }
-        else {
-          const text = `<b>Cluster ID:</b> ${this.point.x+1}<br/>` +
-            `<b>Cluster ID where marker:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
-            `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
-            `<b>Median expression:</b> ${+this.point.value.toFixed(3)} CPM`
 
-          if(this.point.cellGroupValueWhereMarker === this.point.x+1) {
-            return text + `<br/><b>P-value:</b> ${this.point.pValue.toExponential(3)}`
-          }
-          else {
-            return text
-          }
+        const text = `<b>Cluster ID:</b> ${this.point.x + 1}<br/>` +
+          `<b>Cluster ID where marker:</b> ${this.point.cellGroupValueWhereMarker}<br/>` +
+          `<b>Gene ID:</b> ${this.point.geneName}<br/>` +
+          `<b>Median expression:</b> ${+this.point.value.toFixed(3)} CPM`
+
+        if (this.point.cellGroupValueWhereMarker === this.point.x + 1) {
+          return text + `<br/><b>P-value:</b> ${this.point.pValue.toExponential(3)}`
         }
+
+        return text
       }
     },
     title: () => `Cluster marker genes`,
