@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cell types marker gene heatmap demo – Data in props</title>
+
+  <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all"/>
+  <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css" media="all"/>
+
+  <link rel="stylesheet" href="https://www.ebi.ac.uk/gxa/resources/css/foundation/atlas.css" type="text/css" media="all">
+
+  <style type="text/css">
+      div.highcharts-button span {
+          pointer-events: none;
+      }
+  </style>
+</head>
+<body>
+<div class="row expanded">
+  <div class="columns small-12 small-centered">
+    <h1 style="text-align: center">Cell types marker gene heatmap – Data passed as <code>options.data</code></h1>
+    <div id="target"></div>
+  </div>
+</div>
+</body>
+
+<script src="/html/vendors.bundle.js"></script>
+<script src="/html/markerGeneHeatmapRenderModule.bundle.js"></script>
+<script>
+  var jsonPayload = [
+    {
+      "x": 0,
+      "y": 0,
+      "geneName": "Ighm",
+      "value": 2635.72435,
+      "cellGroupValue": "E-CURD-52",
+      "cellGroupValueWhereMarker": "E-CURD-52",
+      "pValue": 2.929306886984924e-59
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "geneName": "Cd79b",
+      "value": 555.099155,
+      "cellGroupValue": "E-CURD-52",
+      "cellGroupValueWhereMarker": "E-CURD-52",
+      "pValue": 5.0475787444433346e-26
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "geneName": "Cd79a",
+      "value": 504.935865,
+      "cellGroupValue": "E-CURD-52",
+      "cellGroupValueWhereMarker": "E-CURD-52",
+      "pValue": 1.6873352761795917e-24
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "geneName": "Syk",
+      "value": 448.028765,
+      "cellGroupValue": "E-CURD-52",
+      "cellGroupValueWhereMarker": "E-CURD-52",
+      "pValue": 9.743384929206039e-20
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "geneName": "Pax5",
+      "value": 345.28345,
+      "cellGroupValue": "E-CURD-52",
+      "cellGroupValueWhereMarker": "E-CURD-52",
+      "pValue": 9.448903084294828e-19
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "geneName": "Cd79a",
+      "value": 3355.062,
+      "cellGroupValue": "E-EHCA-2",
+      "cellGroupValueWhereMarker": "E-EHCA-2",
+      "pValue": 0
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "geneName": "Igkc",
+      "value": 2767.1743,
+      "cellGroupValue": "E-EHCA-2",
+      "cellGroupValueWhereMarker": "E-EHCA-2",
+      "pValue": 3.4277059447228203e-222
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "geneName": "Ighm",
+      "value": 4530.8374,
+      "cellGroupValue": "E-EHCA-2",
+      "cellGroupValueWhereMarker": "E-EHCA-2",
+      "pValue": 2.1965014819360692e-217
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "geneName": "H2-DMb2",
+      "value": 2521.187,
+      "cellGroupValue": "E-EHCA-2",
+      "cellGroupValueWhereMarker": "E-EHCA-2",
+      "pValue": 3.3333273830659306e-207
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "geneName": "Ighd",
+      "value": 2004.1901,
+      "cellGroupValue": "E-EHCA-2",
+      "cellGroupValueWhereMarker": "E-EHCA-2",
+      "pValue": 1.7018851997225637e-150
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "geneName": "Cd79a",
+      "value": 4035.533,
+      "cellGroupValue": "E-ENAD-15",
+      "cellGroupValueWhereMarker": "E-ENAD-15",
+      "pValue": 0
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "geneName": "Cd74",
+      "value": 16777.072,
+      "cellGroupValue": "E-ENAD-15",
+      "cellGroupValueWhereMarker": "E-ENAD-15",
+      "pValue": 0
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "geneName": "H2-Aa",
+      "value": 11246.326,
+      "cellGroupValue": "E-ENAD-15",
+      "cellGroupValueWhereMarker": "E-ENAD-15",
+      "pValue": 0
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "geneName": "H2-Ab1",
+      "value": 14323.324,
+      "cellGroupValue": "E-ENAD-15",
+      "cellGroupValueWhereMarker": "E-ENAD-15",
+      "pValue": 0
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "geneName": "Igkc",
+      "value": 3802.1326,
+      "cellGroupValue": "E-ENAD-15",
+      "cellGroupValueWhereMarker": "E-ENAD-15",
+      "pValue": 0
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "geneName": "IGKC",
+      "value": 5632.3613,
+      "cellGroupValue": "E-GEOD-130148",
+      "cellGroupValueWhereMarker": "E-GEOD-130148",
+      "pValue": 2.3397787981699056e-165
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "geneName": "IGHA1",
+      "value": 2733.3074,
+      "cellGroupValue": "E-GEOD-130148",
+      "cellGroupValueWhereMarker": "E-GEOD-130148",
+      "pValue": 5.086161567950681e-130
+    },
+    {
+      "x": 3,
+      "y": 17,
+      "geneName": "IGHG1",
+      "value": 1319.7607,
+      "cellGroupValue": "E-GEOD-130148",
+      "cellGroupValueWhereMarker": "E-GEOD-130148",
+      "pValue": 1.1039946080134846e-80
+    },
+    {
+      "x": 3,
+      "y": 18,
+      "geneName": "IGHG3",
+      "value": 919.9632,
+      "cellGroupValue": "E-GEOD-130148",
+      "cellGroupValueWhereMarker": "E-GEOD-130148",
+      "pValue": 2.694694496272212e-56
+    },
+    {
+      "x": 3,
+      "y": 19,
+      "geneName": "IGHM",
+      "value": 813.0081,
+      "cellGroupValue": "E-GEOD-130148",
+      "cellGroupValueWhereMarker": "E-GEOD-130148",
+      "pValue": 8.35315681467344e-52
+    },
+    {
+      "x": 4,
+      "y": 20,
+      "geneName": "CD37",
+      "value": 661.319435,
+      "cellGroupValue": "E-GEOD-135922",
+      "cellGroupValueWhereMarker": "E-GEOD-135922",
+      "pValue": 1.9200604651153568e-35
+    },
+    {
+      "x": 4,
+      "y": 21,
+      "geneName": "CD83",
+      "value": 1489.7899,
+      "cellGroupValue": "E-GEOD-135922",
+      "cellGroupValueWhereMarker": "E-GEOD-135922",
+      "pValue": 1.7108813129883753e-33
+    },
+    {
+      "x": 4,
+      "y": 22,
+      "geneName": "EZR",
+      "value": 720.72354,
+      "cellGroupValue": "E-GEOD-135922",
+      "cellGroupValueWhereMarker": "E-GEOD-135922",
+      "pValue": 1.855904115531263e-32
+    },
+    {
+      "x": 4,
+      "y": 23,
+      "geneName": "CD79A",
+      "value": 482.98148,
+      "cellGroupValue": "E-GEOD-135922",
+      "cellGroupValueWhereMarker": "E-GEOD-135922",
+      "pValue": 2.882607702122625e-29
+    },
+    {
+      "x": 4,
+      "y": 24,
+      "geneName": "HLA-DRA",
+      "value": 4216.3965,
+      "cellGroupValue": "E-GEOD-135922",
+      "cellGroupValueWhereMarker": "E-GEOD-135922",
+      "pValue": 4.32261301026468e-27
+    },
+    {
+      "x": 5,
+      "y": 25,
+      "geneName": "HLA-DRA",
+      "value": 4975.1245,
+      "cellGroupValue": "E-HCAD-1",
+      "cellGroupValueWhereMarker": "E-HCAD-1",
+      "pValue": 0
+    },
+    {
+      "x": 5,
+      "y": 26,
+      "geneName": "CD74",
+      "value": 7615.3435,
+      "cellGroupValue": "E-HCAD-1",
+      "cellGroupValueWhereMarker": "E-HCAD-1",
+      "pValue": 0
+    },
+    {
+      "x": 5,
+      "y": 27,
+      "geneName": "IGHM",
+      "value": 2699.67985,
+      "cellGroupValue": "E-HCAD-1",
+      "cellGroupValueWhereMarker": "E-HCAD-1",
+      "pValue": 0
+    },
+    {
+      "x": 5,
+      "y": 28,
+      "geneName": "CD79A",
+      "value": 999.0009,
+      "cellGroupValue": "E-HCAD-1",
+      "cellGroupValueWhereMarker": "E-HCAD-1",
+      "pValue": 0
+    },
+    {
+      "x": 5,
+      "y": 29,
+      "geneName": "MS4A1",
+      "value": 1051.0642,
+      "cellGroupValue": "E-HCAD-1",
+      "cellGroupValueWhereMarker": "E-HCAD-1",
+      "pValue": 0
+    },
+    {
+      "x": 6,
+      "y": 30,
+      "geneName": "IGHM",
+      "value": 5132.9917,
+      "cellGroupValue": "E-HCAD-10",
+      "cellGroupValueWhereMarker": "E-HCAD-10",
+      "pValue": 5.596706947365338e-213
+    },
+    {
+      "x": 6,
+      "y": 31,
+      "geneName": "CD79B",
+      "value": 1470.5883,
+      "cellGroupValue": "E-HCAD-10",
+      "cellGroupValueWhereMarker": "E-HCAD-10",
+      "pValue": 1.827435615005906e-186
+    },
+    {
+      "x": 6,
+      "y": 32,
+      "geneName": "VPREB3",
+      "value": 1186.2396,
+      "cellGroupValue": "E-HCAD-10",
+      "cellGroupValueWhereMarker": "E-HCAD-10",
+      "pValue": 8.304197545929152e-151
+    },
+    {
+      "x": 6,
+      "y": 33,
+      "geneName": "CD74",
+      "value": 5018.8203,
+      "cellGroupValue": "E-HCAD-10",
+      "cellGroupValueWhereMarker": "E-HCAD-10",
+      "pValue": 1.5312285034162506e-147
+    },
+    {
+      "x": 6,
+      "y": 34,
+      "geneName": "CD79A",
+      "value": 694.05884,
+      "cellGroupValue": "E-HCAD-10",
+      "cellGroupValueWhereMarker": "E-HCAD-10",
+      "pValue": 7.984840842112917e-142
+    },
+    {
+      "x": 7,
+      "y": 35,
+      "geneName": "B2M",
+      "value": 6141.1817,
+      "cellGroupValue": "E-HCAD-35",
+      "cellGroupValueWhereMarker": "E-HCAD-35",
+      "pValue": 2.608337948527787e-14
+    },
+    {
+      "x": 7,
+      "y": 36,
+      "geneName": "HLA-B",
+      "value": 1981.21465,
+      "cellGroupValue": "E-HCAD-35",
+      "cellGroupValueWhereMarker": "E-HCAD-35",
+      "pValue": 2.608337948527787e-14
+    },
+    {
+      "x": 7,
+      "y": 37,
+      "geneName": "RPL3",
+      "value": 3166.94565,
+      "cellGroupValue": "E-HCAD-35",
+      "cellGroupValueWhereMarker": "E-HCAD-35",
+      "pValue": 6.049592743647118e-13
+    },
+    {
+      "x": 7,
+      "y": 38,
+      "geneName": "RPS10",
+      "value": 1192.69415,
+      "cellGroupValue": "E-HCAD-35",
+      "cellGroupValueWhereMarker": "E-HCAD-35",
+      "pValue": 2.673291004899316e-12
+    },
+    {
+      "x": 7,
+      "y": 39,
+      "geneName": "IGKC",
+      "value": 130904.472,
+      "cellGroupValue": "E-HCAD-35",
+      "cellGroupValueWhereMarker": "E-HCAD-35",
+      "pValue": 2.291026848779572e-10
+    },
+    {
+      "x": 8,
+      "y": 40,
+      "geneName": "HLA-DRA",
+      "value": 4924.6035,
+      "cellGroupValue": "E-MTAB-8410",
+      "cellGroupValueWhereMarker": "E-MTAB-8410",
+      "pValue": 0
+    },
+    {
+      "x": 8,
+      "y": 41,
+      "geneName": "MS4A1",
+      "value": 839.86565,
+      "cellGroupValue": "E-MTAB-8410",
+      "cellGroupValueWhereMarker": "E-MTAB-8410",
+      "pValue": 0
+    },
+    {
+      "x": 8,
+      "y": 42,
+      "geneName": "CD79A",
+      "value": 1213.4695,
+      "cellGroupValue": "E-MTAB-8410",
+      "cellGroupValueWhereMarker": "E-MTAB-8410",
+      "pValue": 0
+    },
+    {
+      "x": 8,
+      "y": 43,
+      "geneName": "CD37",
+      "value": 1265.556,
+      "cellGroupValue": "E-MTAB-8410",
+      "cellGroupValueWhereMarker": "E-MTAB-8410",
+      "pValue": 0
+    },
+    {
+      "x": 8,
+      "y": 44,
+      "geneName": "CD74",
+      "value": 8709.019,
+      "cellGroupValue": "E-MTAB-8410",
+      "cellGroupValueWhereMarker": "E-MTAB-8410",
+      "pValue": 0
+    },
+    {
+      "x": 9,
+      "y": 45,
+      "geneName": "Cd79a",
+      "value": 2474.2268,
+      "cellGroupValue": "E-MTAB-8810",
+      "cellGroupValueWhereMarker": "E-MTAB-8810",
+      "pValue": 3.0978910886525948e-257
+    },
+    {
+      "x": 9,
+      "y": 46,
+      "geneName": "Ighm",
+      "value": 2907.822,
+      "cellGroupValue": "E-MTAB-8810",
+      "cellGroupValueWhereMarker": "E-MTAB-8810",
+      "pValue": 1.3745407014034006e-252
+    },
+    {
+      "x": 9,
+      "y": 47,
+      "geneName": "Igkc",
+      "value": 9305.416,
+      "cellGroupValue": "E-MTAB-8810",
+      "cellGroupValueWhereMarker": "E-MTAB-8810",
+      "pValue": 5.768245509720537e-204
+    },
+    {
+      "x": 9,
+      "y": 48,
+      "geneName": "Cd37",
+      "value": 703.63074,
+      "cellGroupValue": "E-MTAB-8810",
+      "cellGroupValueWhereMarker": "E-MTAB-8810",
+      "pValue": 7.879266524021192e-156
+    },
+    {
+      "x": 9,
+      "y": 49,
+      "geneName": "H2-DMb2",
+      "value": 809.3889,
+      "cellGroupValue": "E-MTAB-8810",
+      "cellGroupValueWhereMarker": "E-MTAB-8810",
+      "pValue": 2.4970607199795985e-148
+    },
+    {
+      "x": 10,
+      "y": 50,
+      "geneName": "CD79A",
+      "value": 682.36096,
+      "cellGroupValue": "E-MTAB-9221",
+      "cellGroupValueWhereMarker": "E-MTAB-9221",
+      "pValue": 5.4818584150838515e-168
+    },
+    {
+      "x": 10,
+      "y": 51,
+      "geneName": "HLA-DRA",
+      "value": 3568.2427,
+      "cellGroupValue": "E-MTAB-9221",
+      "cellGroupValueWhereMarker": "E-MTAB-9221",
+      "pValue": 8.902170613257764e-161
+    },
+    {
+      "x": 10,
+      "y": 52,
+      "geneName": "CD74",
+      "value": 4629.63,
+      "cellGroupValue": "E-MTAB-9221",
+      "cellGroupValueWhereMarker": "E-MTAB-9221",
+      "pValue": 8.902170613257764e-161
+    },
+    {
+      "x": 10,
+      "y": 53,
+      "geneName": "MS4A1",
+      "value": 720.20166,
+      "cellGroupValue": "E-MTAB-9221",
+      "cellGroupValueWhereMarker": "E-MTAB-9221",
+      "pValue": 8.458262309574217e-149
+    },
+    {
+      "x": 10,
+      "y": 54,
+      "geneName": "BANK1",
+      "value": 541.3452,
+      "cellGroupValue": "E-MTAB-9221",
+      "cellGroupValueWhereMarker": "E-MTAB-9221",
+      "pValue": 1.4348728300132757e-146
+    }
+  ];
+
+  markerGeneHeatmapRenderModule.render(
+    {
+      hasDynamicHeight: true,
+      heatmapRowHeight: 40,
+      species: 'Homo sapiens',
+      heatmapType: 'cellmultiexperiment',
+      data: jsonPayload
+    },
+    'target'
+  );
+</script>
+</html>
